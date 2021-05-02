@@ -4,7 +4,7 @@ A simple HTTP server that validates JSON form blast tool CLI configs.
 
 == Usage
 
-[source, shell]
+[source, console]
 ----
 $ curl -d'{"-task":"blastp"}' localhost/validate/blastx
 {
