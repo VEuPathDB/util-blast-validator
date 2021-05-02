@@ -1,0 +1,62 @@
+openapi: 3.0.3
+
+info:
+  title: Blast CLI Configuration Validator
+  description: Validates JSON encoded blast cli arg sets.
+  version: 1.0.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+
+paths:
+  /validate/{tool}:
+    parameters:
+      - name: tool
+        in: path
+        required: true
+        description: Blast+ CLI tool such as blastn or blast_formatter.
+        schema:
+          type: string
+          enum:
+            - blastn
+            - blastp
+            - blastx
+            - deltablast
+            - psiblast
+            - rpsblast
+            - rpstblastn
+            - tblastn
+            - tblastx
+            - blast_formatter
+    post:
+      operationId: run-validation
+      summary: Run validation on the request body.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        200:
+          description: |
+            Validation completed successfully.
+
+            *Note*: This does not mean the config was valid, it just means the
+            validation was able to run.  See the response body for details about
+            the validation result.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: integer
+                    enum:
+                      - 200
+                  payload:
+                    type: object
+                    additionalProperties:
+                      type: array
+                      items:
+                        type: string
+

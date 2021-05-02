@@ -1,0 +1,18 @@
+= util-blast-validator
+
+A simple HTTP server that validates JSON form blast tool CLI configs.
+
+== Usage
+
+[source, shell-session]
+----
+$ curl -d'{"-task":"blastp"}' localhost/validate/blastx
+{
+  "status": 200,
+  "payload": {
+    "-task": [
+      "Invalid -task value \"blastp\".  Must be one of [blastx, blastx-fast]."
+    ]
+  }
+}
+----

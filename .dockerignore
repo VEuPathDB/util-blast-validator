@@ -1,0 +1,7 @@
+node_modules/
+docs/
+bin/
+makefile
+package.json
+package-lock.json
+openapi.yml
