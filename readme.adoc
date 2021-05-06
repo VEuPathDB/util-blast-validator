@@ -8,11 +8,15 @@ A simple HTTP server that validates JSON form blast tool CLI configs.
 ----
 $ curl -d'{"-task":"blastp"}' localhost/validate/blastx
 {
-  "status": 200,
-  "payload": {
+  "status": 200, <1>
+  "payload": { <2>
     "-task": [
       "Invalid -task value \"blastp\".  Must be one of [blastx, blastx-fast]."
     ]
   }
 }
 ----
+<1> The response status will always be 200 for a successful validation.  Other
+    response codes are used for bad requests or internal errors.
+<2> Payload contains a list of 0 or more validation errors keyed on the blast
+    cli tool flag the errors relate to.

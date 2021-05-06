@@ -2,6 +2,7 @@ package server
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/Foxcapades/go-midl/v2/pkg/midl"
@@ -30,6 +31,8 @@ type response struct {
 func handle(req midl.Request) midl.Response {
 	tool := blast.Tool(mux.Vars(req.RawRequest())[param])
 
+	log.Println("Validating config for tool ", tool)
+
 	var tmp gojay.UnmarshalerJSONObject
 
 	switch tool {
@@ -54,6 +57,7 @@ func handle(req midl.Request) midl.Response {
 	case blast.ToolBlastFormatter:
 		tmp = &blast.BlastFormatter{}
 	default:
+		log.Println("Unrecognized tool, returning 404.")
 		return midl.MakeResponse(404, response{
 			Status:  404,
 			Message: fmt.Sprintf(`"%s" is not a recognized blast+ tool`, tool),
@@ -61,12 +65,14 @@ func handle(req midl.Request) midl.Response {
 	}
 
 	if err := gojay.UnmarshalJSONObject(req.Body(), tmp); err != nil {
+		log.Println("Failed to parse JSON input.")
 		return midl.MakeResponse(400, response{
 			Status:  400,
 			Message: "Failed to parse request body: " + err.Error(),
 		})
 	}
 
+	log.Println("Validation completed.")
 	return midl.MakeResponse(200, response{
 		Status:  200,
 		Payload: tmp.(bval.Validator).Validate(),
