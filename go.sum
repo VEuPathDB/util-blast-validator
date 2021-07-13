@@ -114,10 +114,8 @@ github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXf
 github.com/stretchr/testify v1.3.0 h1:TivCn/peBQ7UY8ooIcPgZFpTNSz0Q2U6UrFlUfqbe0Q=
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/tarm/serial v0.0.0-20180830185346-98f6abe2eb07/go.mod h1:kDXzergiv9cbyO7IOYJZWg1U88JhDg3PB6klq9Hg2pA=
-github.com/veupathdb/lib-go-blast/v2 v2.0.3 h1:Fqthu6IYUDlT90Xn0unwPTIRhP+XY1Wi6DLzZYC5IZM=
-github.com/veupathdb/lib-go-blast/v2 v2.0.3/go.mod h1:lxMy/BWqYnLzcLqs2fcrqBJ6DTrLwcZT4AylnLJ8Ncw=
-github.com/veupathdb/lib-go-blast/v2 v2.0.6 h1:Qk5KMqBTqf+I5MwLzv/upKLCQHzL2gN9Soyc2J8EHn8=
-github.com/veupathdb/lib-go-blast/v2 v2.0.6/go.mod h1:lxMy/BWqYnLzcLqs2fcrqBJ6DTrLwcZT4AylnLJ8Ncw=
+github.com/veupathdb/lib-go-blast/v2 v2.0.7 h1:i1OSy3gaqgWigneP5p2s8wmoXkPDZ9OjiuGJTnyKAOI=
+github.com/veupathdb/lib-go-blast/v2 v2.0.7/go.mod h1:9va7OZ1zzLwOU1Zg06BpC+GIKTxMZW/Gp4gkthYE7QQ=
 github.com/viant/assertly v0.4.8/go.mod h1:aGifi++jvCrUaklKEKT0BU95igDNaqkvz+49uaYMPRU=
 github.com/viant/toolbox v0.24.0/go.mod h1:OxMCG57V0PXuIP2HNQrtJf2CjqdmbrOx5EkMILuUhzM=
 github.com/xeipuuv/gojsonpointer v0.0.0-20180127040702-4e3ac2762d5f/go.mod h1:N2zxlSyiKSe5eX1tZViRH5QA0qijqEDrYZiPEAiq3wU=
