@@ -35,6 +35,10 @@ func handle(req midl.Request) midl.Response {
 
 	var tmp gojay.UnmarshalerJSONObject
 
+	bod := req.Body()
+
+	log.Println("Input JSON: ", string(bod))
+
 	switch tool {
 	case blast.ToolBlastN:
 		tmp = &blast.BlastN{}
@@ -64,7 +68,7 @@ func handle(req midl.Request) midl.Response {
 		})
 	}
 
-	if err := gojay.UnmarshalJSONObject(req.Body(), tmp); err != nil {
+	if err := gojay.UnmarshalJSONObject(bod, tmp); err != nil {
 		log.Println("Failed to parse JSON input.")
 		return midl.MakeResponse(400, response{
 			Status:  400,
